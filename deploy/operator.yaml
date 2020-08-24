@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bgdeploy-xds2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bgdeploy
+      service: xds
+  template:
+    metadata:
+      labels:
+        app: bgdeploy
+        service: xds
+    spec:
+      serviceAccountName: bgdeploy-xds2
+      containers:
+        - name: bgdeploy-xds2
+          # Replace this with the built image name
+          image: takeyan/bgdeploy-operator:0.1.0
+          command:
+          - bgdeploy-xds2
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "bgdeploy-xds2"

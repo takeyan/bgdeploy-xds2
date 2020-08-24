@@ -1,0 +1,7 @@
+apiVersion: swallowlab.com/v1alpha1
+kind: BGDeploy
+metadata:
+  name: example-bgdeploy
+spec:
+  # Add fields here
+  size: 3
