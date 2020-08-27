@@ -94,6 +94,9 @@ kubectl apply -f bgdeploy_phase4.yaml
 curl localhost:{Envoy's NodePort number}/api/echo
 ```
 
+### Appendix. Architecture diagram
+![architecture](architecture.png)
+
 ## Have fun!
 
 
