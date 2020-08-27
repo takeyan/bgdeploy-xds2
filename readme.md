@@ -51,6 +51,8 @@ kubectl create -f envoy-configmap.yaml
 
 ## Run the verification scenario
 
+![verifiction scenario](verification_scenario.png)
+
 ### 1. Deploy the operator pod
 ```
 kubectl create -f deploy/operator.yaml 
