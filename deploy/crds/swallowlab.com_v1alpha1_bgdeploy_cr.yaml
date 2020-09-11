@@ -1,7 +1,11 @@
 apiVersion: swallowlab.com/v1alpha1
 kind: BGDeploy
 metadata:
-  name: example-bgdeploy
+  name: bgdeploy
 spec:
-  # Add fields here
-  size: 3
+  blue:     takeyan/flask:0.1.0
+  green:    takeyan/flask:0.1.1
+  port:     5000
+  replicas: 1
+  transit:  "OFF"
+  active:   blue
